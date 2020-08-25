@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\carControler.cs" />
     <Compile Include="Assets\Scripts\EnemyManager.cs" />
     <None Include="Assets\Best Sports CARS - Pro 3D Models\README.txt" />
     <Reference Include="Unity.Timeline.Editor">
