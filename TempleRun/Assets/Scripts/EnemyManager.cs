@@ -23,7 +23,7 @@ public class EnemyManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        UpdateTimer();
     }
 
     // Update is called once per frame
@@ -38,7 +38,7 @@ public class EnemyManager : MonoBehaviour
             GameObject tempObj = Instantiate(m_enemyRefence,
                 transform.position + new Vector3(Random.Range(-1f, 1f), 0f, 0f),
                 Quaternion.identity);
-
+            //tempObj.transform.SetParent(transform);
             m_enemies.Add(tempObj);
 
             Destroy(tempObj,20f);

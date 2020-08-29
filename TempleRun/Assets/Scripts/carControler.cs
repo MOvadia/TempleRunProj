@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class carControler : MonoBehaviour
 {
     [SerializeField] private float m_MovmentFactor = 0.1f;
-    [SerializeField] private float m_JumpFactor = 80f;
     [SerializeField] private float m_RotationFactor = 0.01f;
     [SerializeField] private float m_PokerFactor = 80f;
     [SerializeField] private float m_shotFactor = 80f;
@@ -54,10 +54,6 @@ public class carControler : MonoBehaviour
             player.position -= player.right * m_MovmentFactor;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            playerRig.AddForce(player.up * m_JumpFactor);
-        }
 
     }
 }
