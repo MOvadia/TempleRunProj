@@ -64,7 +64,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\carControler.cs" />
-    <Compile Include="Assets\Scripts\EnemyManager.cs" />
     <Compile Include="Assets\Scripts\FloorPrefabs.cs" />
     <Compile Include="Assets\Scripts\Timer.cs" />
     <None Include="Assets\Best Sports CARS - Pro 3D Models\README.txt" />
