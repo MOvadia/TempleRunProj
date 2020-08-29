@@ -21,6 +21,8 @@ public class carControler : MonoBehaviour
     private CharacterController controller;
     private static bool m_isDead = false;
     private int m_numOfCollision = 0;
+    
+    public DeathMenu deathMenu;
 
 
     // Start is called before the first frame update
@@ -55,6 +57,7 @@ public class carControler : MonoBehaviour
     private void Death()
     {
         m_isDead = true;
+        deathMenu.toggleEndMenu(m_numOfCollision);
     }
 
     private void CheckInputs()
@@ -77,5 +80,10 @@ public class carControler : MonoBehaviour
         {
             return m_isDead;
         }
+    }
+
+    public void setDeadToFalse()
+    {
+        m_isDead = false;
     }
 }
