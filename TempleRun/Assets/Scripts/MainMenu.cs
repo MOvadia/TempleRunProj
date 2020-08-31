@@ -2,20 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-    //// Start is called before the first frame update
-    //void Start()
-    //{
-        
-    //}
+    public Text highScoreText;
 
-    //// Update is called once per frame
-    //void Update()
-    //{
-        
-    //}
+    //// Start is called before the first frame update
+    void Start()
+    {
+        highScoreText.text = "Best Score: " + PlayerPrefs.GetInt("Highscore").ToString();
+    }
+
 
     public void ToGame()
     {

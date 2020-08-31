@@ -26,6 +26,7 @@ public class carControler : MonoBehaviour
         m_isDead = false;
         m_player = transform;
         m_playerRig = gameObject.GetComponent<Rigidbody>();
+        m_numOfCollisionWithCoin = 0;
     }
 
     // Update is called once per frame
@@ -33,10 +34,6 @@ public class carControler : MonoBehaviour
     {
         if (m_isDead)
         {
-            if(m_highestScore < m_numOfCollisionWithCoin)
-            {
-                m_highestScore = m_numOfCollisionWithCoin;
-            }
             return;
         }
         CheckInputs();
@@ -59,6 +56,12 @@ public class carControler : MonoBehaviour
     private void Death()
     {
         m_isDead = true;
+        if (PlayerPrefs.GetInt("Highscore") < m_numOfCollisionWithCoin)
+        {
+                Debug.Log("score2: " + PlayerPrefs.GetInt("Highscore"));
+                PlayerPrefs.SetInt("Highscore",m_numOfCollisionWithCoin);
+        }
+
         m_deathMenu.ToggleEndMenu(m_numOfCollisionWithCoin);
     }
 
