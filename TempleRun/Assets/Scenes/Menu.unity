@@ -1154,7 +1154,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Not Temple Run
+  m_Text: High Way Run
 --- !u!222 &1500771415
 CanvasRenderer:
   m_ObjectHideFlags: 0

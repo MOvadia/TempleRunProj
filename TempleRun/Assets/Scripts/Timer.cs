@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    [SerializeField]
-    private Text m_TimerUI;
+    [SerializeField] private Text m_TimerUI;
+    [SerializeField] private carControler m_car;
+
     private float m_timer = 0f;
-    private int m_timerBeuty = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +19,7 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(carControler.IsDead)
+        if(m_car.IsDead)
         {
             return;
         }

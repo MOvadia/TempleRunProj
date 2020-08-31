@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class DeathMenu : MonoBehaviour
 {
-    public Text scoreText;
-    public carControler m_car;
+    [SerializeField] private Text m_scoreText;
+    [SerializeField] private carControler m_car;
 
     // Start is called before the first frame update
     void Start()
@@ -15,22 +15,22 @@ public class DeathMenu : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
+    //// Update is called once per frame
+    //void Update()
+    //{
         
-    }
+    //}
 
-    public void toggleEndMenu(int score)
+    public void ToggleEndMenu(int score)
     {
         gameObject.SetActive(true);
-        scoreText.text = score.ToString();
+        m_scoreText.text = score.ToString();
     } 
 
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        m_car.setDeadToFalse();
+        m_car.IsDead = false;
     }
 
     public void ToMenu()

@@ -8,35 +8,37 @@ public class carControler : MonoBehaviour
 {
     [SerializeField] private float m_MovmentFactor = 0.1f;
     [SerializeField] private float m_MovmentFactorForward = 0.1f;
-    [SerializeField] private float m_RotationFactor = 0.01f;
-    [SerializeField] private float m_PokerFactor = 80f;
-    [SerializeField] private float m_shotFactor = 80f;
-
     [SerializeField] private GameObject m_enemyRefence;
     [SerializeField] private Text m_coinsCounterToScreen;
-    private int m_coinsCounter;
-
-    private Transform player;
-    private Rigidbody playerRig;
-    private CharacterController controller;
-    private static bool m_isDead = false;
-    private int m_numOfCollision = 0;
+    [SerializeField] private DeathMenu m_deathMenu;
     
-    public DeathMenu deathMenu;
-
+    private int m_coinsCounter;
+    private Transform m_player;
+    private Rigidbody m_playerRig;
+    private CharacterController m_controller;
+    private static bool m_isDead = false;
+    private int m_numOfCollisionWithCoin = 0;
+    private int m_highestScore = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        player = transform;
-        playerRig = gameObject.GetComponent<Rigidbody>();
+        m_isDead = false;
+        m_player = transform;
+        m_playerRig = gameObject.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
         if (m_isDead)
+        {
+            if(m_highestScore < m_numOfCollisionWithCoin)
+            {
+                m_highestScore = m_numOfCollisionWithCoin;
+            }
             return;
+        }
         CheckInputs();
     }
 
@@ -48,8 +50,8 @@ public class carControler : MonoBehaviour
         }
         if (collision.gameObject.tag == "coin")
         {
-            m_numOfCollision++;
-            m_coinsCounterToScreen.text = m_numOfCollision.ToString();
+            m_numOfCollisionWithCoin++;
+            m_coinsCounterToScreen.text = m_numOfCollisionWithCoin.ToString();
             Object.Destroy(collision.gameObject);
         }
     }
@@ -57,33 +59,40 @@ public class carControler : MonoBehaviour
     private void Death()
     {
         m_isDead = true;
-        deathMenu.toggleEndMenu(m_numOfCollision);
+        m_deathMenu.ToggleEndMenu(m_numOfCollisionWithCoin);
     }
 
     private void CheckInputs()
     {
-        player.position += player.forward * m_MovmentFactorForward;
+        m_player.position += m_player.forward * m_MovmentFactorForward;
 
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            player.position += player.right * m_MovmentFactor;
+            m_player.position += m_player.right * m_MovmentFactor;
         }
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            player.position -= player.right * m_MovmentFactor;
+            m_player.position -= m_player.right * m_MovmentFactor;
         }
     }
-    public static bool IsDead
+    public bool IsDead
     {
         get 
         {
             return m_isDead;
         }
+        set
+        {
+            m_isDead = value;
+        }
     }
 
-    public void setDeadToFalse()
+    public int HighestScore
     {
-        m_isDead = false;
+        get
+        {
+            return m_highestScore;
+        }
     }
 }

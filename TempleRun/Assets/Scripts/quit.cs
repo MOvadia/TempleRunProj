@@ -5,19 +5,19 @@ using UnityEngine;
 public class quit : MonoBehaviour
 {
       // Start is called before the first frame update
-    void Start()
-    {
+    //void Start()
+    //{
         
-    }
+    //}
 
-    // Update is called once per frame
-    void Update()
-    {
+    //// Update is called once per frame
+    //void Update()
+    //{
         
-    }
-    public void doquitGame()
+    //}
+    public void QuitTheGame()
     {
-        Debug.Log("qiut the game");
+        Debug.Log("quit the game");
         Application.Quit();
     }
 }

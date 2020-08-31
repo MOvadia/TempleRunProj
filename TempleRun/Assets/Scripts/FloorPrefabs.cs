@@ -5,17 +5,16 @@ using UnityEngine;
 
 public class FloorPrefabs : MonoBehaviour
 {
-    public GameObject[] m_floorPrefabs;
+    [SerializeField] private GameObject[] m_floorPrefabs;
+    [SerializeField] private Transform m_playerTrasform;
 
-    public Transform m_playerTrasform;
     private float m_spawnZ = 0.0f;
     private float m_floorLength = 50.0f;
     private int m_amountOfFloarOnScreen = 5;
     private int m_lastPrfabIndex = 0;
-
     private List<GameObject> m_activeFloor;
+
     // Start is called before the first frame update
-    
     private void Start()
     {
         m_activeFloor = new List<GameObject>();

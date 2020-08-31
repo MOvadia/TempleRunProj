@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1869,6 +1869,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TimerUI: {fileID: 1727149950}
+  m_car: {fileID: 2037094916}
 --- !u!1 &1827006395
 GameObject:
   m_ObjectHideFlags: 0
@@ -2166,7 +2167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43a71fbb0d02e764cbd5cfc4b6d8778a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 1647057223}
+  m_scoreText: {fileID: 1647057223}
   m_car: {fileID: 2037094916}
 --- !u!1 &1962457462
 GameObject:
@@ -2281,12 +2282,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_MovmentFactor: 0.1
   m_MovmentFactorForward: 0.5
-  m_RotationFactor: 0.01
-  m_PokerFactor: 80
-  m_shotFactor: 80
   m_enemyRefence: {fileID: 100000, guid: 80f76393a8f65094d914dbd03577aec2, type: 3}
   m_coinsCounterToScreen: {fileID: 1069661090}
-  deathMenu: {fileID: 1961763306}
+  m_deathMenu: {fileID: 1961763306}
 --- !u!23 &2039967232 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 23870199244322096, guid: 37ec82ab8eba1384baadcaa1d88b7f72,
