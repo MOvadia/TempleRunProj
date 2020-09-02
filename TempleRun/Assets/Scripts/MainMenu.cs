@@ -11,7 +11,8 @@ public class MainMenu : MonoBehaviour
     //// Start is called before the first frame update
     void Start()
     {
-        highScoreText.text = "Best Score: " + PlayerPrefs.GetInt("Highscore").ToString();
+        if(SceneManager.GetActiveScene () == SceneManager.GetSceneByName ("Menu"))
+            highScoreText.text = "Best Score: " + PlayerPrefs.GetInt("Highscore").ToString();
     }
 
 
@@ -20,8 +21,15 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("Game");
     }
 
-    public void ToMainMenu()
+    public void ToMenu()
     {
         SceneManager.LoadScene("Menu");
     }
+
+     public void ToHowToPlay()
+    {
+        SceneManager.LoadScene("HowToPlay");
+    }
+
+
 }
