@@ -15,12 +15,6 @@ public class DeathMenu : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    //// Update is called once per frame
-    //void Update()
-    //{
-        
-    //}
-
     public void ToggleEndMenu(int score)
     {
         gameObject.SetActive(true);
